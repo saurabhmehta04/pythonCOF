@@ -1,12 +1,24 @@
+"""
+Python script for the cof's
+Steps ToDo :
+1. Read the data from all csv file.
+2. Map the document with the read csv file and also with the database schema
+3. MySQL Python connector
+4. Connect to the database
+5. Execute the script
+
+"""
+
+
 import csv
 
+# Read the file in an object
+with open('section_3.csv', 'r') as f:
+    reader = csv.reader(f)
+    courseGoals_list = list(reader)
 
-def main():
-    print("Parsing csv file")
-    with open('demo.csv', newline='') as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=' ')
-        for row in spamreader:
-            print(', '.join(row))
+for row in courseGoals_list:
+    print(row)
 
-if __name__ == '__main__':
-    main()
+
+# truncate the data from the table in the database
